@@ -1,10 +1,12 @@
-hk2-testng
-==========
+# hk2-testng
+
 
 This project adds HK2 Dependency Injection support to TestNG. It provides the ability to inject your test classes with HK2 services defined in inhibitent files and/or custom binders.
 
-Usage
-==========
+## Usage
+
+
+### Service Discovery
 
 By default the @HK2 annotation creates a new service locator with the name "hk2-testng-locator" and populates it with services defined in "META-INF/hk2-locator/default" classpath inhabitant files. Simply annotate your test class with @HK2 like this to inject discovered services:
 
@@ -28,6 +30,8 @@ public class PrimaryInjectionTest {
 }
 ```
 
+### Custom Binders Without Service Discovery
+
 If service discovery and population is not desirable then you can turn it off by setting the populate parameter to false and defining your own Binder class(es):
 
 
@@ -49,6 +53,8 @@ public class BinderInjectionTest {
     }
 }
 ```
+
+### Service Discovery and Custom Binders
 
 You can also use both service population and your own binder class(es). Simply insure that populate flag is set to true (by default set to true) and specify your binders like this:
 
@@ -74,13 +80,13 @@ public class MultipleBinderInjectionTest {
 The above will create a single service locator instance named "hk2-testng-locator" that contains all the discovered services as well as services defined in your binder.
 
 
+### Custom Service Locator Name
 
 Finally if you wish to use a custom service locator name you can by specifying @HK2 annotation's value parameter:
 
 ```java
 @HK2("custom")
 public class CustomLocatorNameTest {
-
 
     @Inject
     ServiceLocator sericeLocator;
@@ -106,7 +112,12 @@ public class CustomLocatorNameTest {
 }
 ```
 
-Note that if two test classes are annotated with @HK2("custom") then only one service locator will be created and the tests will share this service locator. If you wish to use an isolated service locators per test or for certain tests then you will need to define a unique service locator name:
+Note that if two test classes are annotated with @HK2("custom") then only one service locator will be created and the tests will share this service locator. 
+
+
+### Isolated Service Locators
+
+If you wish to use an isolated service locators per test or for certain tests then you will need to define a unique service locator name for these test classes:
 
 
 ```java

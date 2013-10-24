@@ -1,17 +1,19 @@
 package com.github.saden1.hk2testng.service.impl;
 
+import com.github.saden1.hk2testng.service.NamedService;
 import com.github.saden1.hk2testng.service.SecondaryService;
-import com.github.saden1.hk2testng.service.PrimaryService;
 import javax.inject.Inject;
+import javax.inject.Named;
 import org.jvnet.hk2.annotations.Service;
 
+@Named("namedService")
 @Service
-public class PrimaryServiceImpl implements PrimaryService {
+public class NamedServiceImpl implements NamedService {
 
     private final SecondaryService secondaryService;
 
     @Inject
-    PrimaryServiceImpl(SecondaryService secondaryService) {
+    NamedServiceImpl(SecondaryService secondaryService) {
         this.secondaryService = secondaryService;
     }
 

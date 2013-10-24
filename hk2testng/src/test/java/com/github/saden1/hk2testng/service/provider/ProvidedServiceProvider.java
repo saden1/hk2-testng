@@ -17,7 +17,7 @@ public class ProvidedServiceProvider implements Factory<ProvidedService> {
     private final Provider<SecondaryService> secondaryServiceProvider;
 
     @Inject
-    public ProvidedServiceProvider(Provider<SecondaryService> secondaryServiceProvider) {
+    ProvidedServiceProvider(Provider<SecondaryService> secondaryServiceProvider) {
         this.secondaryServiceProvider = secondaryServiceProvider;
     }
 

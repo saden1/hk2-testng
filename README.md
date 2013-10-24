@@ -1,3 +1,12 @@
+# *UPDATE*: 
+This project has been submited and merged into HK2.
+
+* https://java.net/jira/browse/HK2-135
+* https://java.net/projects/hk2/sources/git/show/hk2/hk2-testing/hk2-testng
+
+
+
+
 # hk2-testng
 
 

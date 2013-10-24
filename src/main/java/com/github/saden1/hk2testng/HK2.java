@@ -2,6 +2,7 @@ package com.github.saden1.hk2testng;
 
 import java.lang.annotation.Documented;
 import static java.lang.annotation.ElementType.TYPE;
+import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 import org.glassfish.hk2.utilities.Binder;
@@ -13,6 +14,7 @@ import org.glassfish.hk2.utilities.Binder;
  * @author saden
  */
 @Documented
+@Inherited
 @Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
 @Target(TYPE)
 public @interface HK2 {

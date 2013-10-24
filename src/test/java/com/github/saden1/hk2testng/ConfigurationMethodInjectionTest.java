@@ -3,7 +3,10 @@ package com.github.saden1.hk2testng;
 import com.github.saden1.hk2testng.service.PrimaryService;
 import javax.inject.Inject;
 import static org.assertj.core.api.Assertions.assertThat;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /**

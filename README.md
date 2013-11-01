@@ -4,6 +4,16 @@ This project has been submited and merged into HK2.
 * https://java.net/jira/browse/HK2-135
 * https://java.net/projects/hk2/sources/git/show/hk2/hk2-testing/hk2-testng
 
+Note that the HK2 project took this code as is with minor renaming of packages. The instructions bellow still apply and all you have to do to use HK2 in your tests is simply add the HK2 dependency to your project and imprt the @HK2 annotation:
+
+```xml
+<dependency>
+    <groupId>org.glassfish.hk2</groupId>
+    <artifactId>hk2-testng</artifactId>
+    <version>2.2.0-b23</version>
+    <scope>test</scope>
+</dependency>
+```
 
 
 
